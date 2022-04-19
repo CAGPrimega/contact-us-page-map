@@ -800,23 +800,10 @@
         "capabilities": {"input":true,"autocomplete":true,"directions":true,"distanceMatrix":true,"details":true}
       };
 
-function initMap(): void {
-  new google.maps.Map(
-    document.getElementById("map") as HTMLElement,
-    {
-      mapId: "8e0a97af9386fef",
-      center: { lat: 48.85, lng: 2.35 },
-      zoom: 12,
-    } as google.maps.MapOptions
-  );
-}
-
-declare global {
-  interface Window {
-    initMap: () => void;
-  }
-}
-window.initMap = initMap;
+      function initMap() {
+        new LocatorPlus(CONFIGURATION);
+      }      
+      
     </script>
     <script id="locator-result-items-tmpl" type="text/x-handlebars-template">
       {{#each locations}}
